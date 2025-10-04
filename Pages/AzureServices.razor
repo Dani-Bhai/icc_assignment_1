@@ -1,4 +1,4 @@
-﻿@page "/azure-services"
+@page "/azure-services"
 
 <PageTitle>PakPulse - Azure Services</PageTitle>
 
@@ -10,8 +10,8 @@
 </section>
 
 <main class="container">
-    <div class="card">
-        <div class="card-header">
+    <div class="card enhanced">
+        <div class="card-header enhanced">
             <span class="accent-bar primary"></span>
             <h3>Why Microsoft Azure?</h3>
         </div>
@@ -25,305 +25,435 @@
         </div>
     </div>
 
-    <div class="azure-service">
-        <div class="azure-service-header primary">
-            <h3><span class="icon">🚀</span> Azure App Service</h3>
-            <p class="subtitle">Compute & Hosting Platform</p>
+    <!-- Azure Services Carousel -->
+    <div class="card enhanced">
+        <div class="card-header enhanced">
+            <span class="accent-bar accent"></span>
+            <h3>Azure Services Overview</h3>
         </div>
-        <div class="azure-service-body">
-            <h4>Purpose in PakPulse</h4>
-            <p>
-                Azure App Service hosts all Golang microservices (User Service, Alert Service, Post Service, and Notification Service). It provides a fully managed platform for building, deploying, and scaling web applications.
-            </p>
+        <div class="azure-services-carousel" id="azureServicesCarousel">
+            <div class="azure-carousel-inner">
+                <!-- Slide 1: Azure App Service -->
+                <div class="azure-carousel-slide active">
+                    <div class="azure-service-header-carousel">
+                        <span class="azure-service-icon">🚀</span>
+                        <h3>Azure App Service</h3>
+                        <p class="subtitle">Compute & Hosting Platform</p>
+                    </div>
+                    <div class="azure-service-content">
+                        <h4>Purpose in PakPulse</h4>
+                        <p>
+                            Azure App Service hosts all Golang microservices (User Service, Alert Service, Post Service, and Notification Service). It provides a fully managed platform for building, deploying, and scaling web applications.
+                        </p>
 
-            <h4>Key Features Used</h4>
-            <div class="service-grid">
-                <div class="service-box">
-                    <h5>Auto-Scaling</h5>
-                    <p>Automatically scales based on traffic to handle 500+ concurrent users</p>
+                        <h4>Key Features Used</h4>
+                        <div class="service-grid">
+                            <div class="service-box">
+                                <h5>Auto-Scaling</h5>
+                                <p>Automatically scales based on traffic to handle 500+ concurrent users</p>
+                            </div>
+                            <div class="service-box">
+                                <h5>Continuous Deployment</h5>
+                                <p>Integrated CI/CD pipelines for automated deployments</p>
+                            </div>
+                            <div class="service-box">
+                                <h5>High Availability</h5>
+                                <p>99.95% SLA with built-in load balancing</p>
+                            </div>
+                            <div class="service-box">
+                                <h5>Custom Domains & SSL</h5>
+                                <p>Secure HTTPS connections with custom domain support</p>
+                            </div>
+                        </div>
+
+                        <h4>Benefits</h4>
+                        <ul class="feature-list">
+                            <li>
+                                <span class="bullet">✓</span>
+                                <span>No infrastructure management required - focus on code</span>
+                            </li>
+                            <li>
+                                <span class="bullet">✓</span>
+                                <span>Built-in monitoring and diagnostics</span>
+                            </li>
+                            <li>
+                                <span class="bullet">✓</span>
+                                <span>Support for multiple programming languages including Golang</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="service-box">
-                    <h5>Continuous Deployment</h5>
-                    <p>Integrated CI/CD pipelines for automated deployments</p>
+
+                <!-- Slide 2: Azure Service Bus -->
+                <div class="azure-carousel-slide">
+                    <div class="azure-service-header-carousel">
+                        <span class="azure-service-icon">📨</span>
+                        <h3>Azure Service Bus</h3>
+                        <p class="subtitle">Message Broker & Integration</p>
+                    </div>
+                    <div class="azure-service-content">
+                        <h4>Purpose in PakPulse</h4>
+                        <p>
+                            Azure Service Bus acts as the message broker for asynchronous communication between microservices. It ensures reliable message delivery and decouples services for better scalability and fault tolerance.
+                        </p>
+
+                        <h4>Key Features Used</h4>
+                        <div class="service-grid">
+                            <div class="service-box secondary">
+                                <h5>Message Queues</h5>
+                                <p>Point-to-point communication for task distribution</p>
+                            </div>
+                            <div class="service-box secondary">
+                                <h5>Topics & Subscriptions</h5>
+                                <p>Publish-subscribe pattern for broadcasting alerts</p>
+                            </div>
+                            <div class="service-box secondary">
+                                <h5>Dead-Letter Queues</h5>
+                                <p>Handle failed message processing gracefully</p>
+                            </div>
+                            <div class="service-box secondary">
+                                <h5>Message Sessions</h5>
+                                <p>Ordered message processing for related events</p>
+                            </div>
+                        </div>
+
+                        <h4>Use Cases in PakPulse</h4>
+                        <ul class="feature-list">
+                            <li>
+                                <span class="bullet secondary">•</span>
+                                <span>Alert Service publishes new alerts to Service Bus topics</span>
+                            </li>
+                            <li>
+                                <span class="bullet secondary">•</span>
+                                <span>Notification Service subscribes to receive and deliver alerts to users</span>
+                            </li>
+                            <li>
+                                <span class="bullet secondary">•</span>
+                                <span>Post Service queues image processing tasks for background execution</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="service-box">
-                    <h5>High Availability</h5>
-                    <p>99.95% SLA with built-in load balancing</p>
+
+                <!-- Slide 3: Azure Database for PostgreSQL -->
+                <div class="azure-carousel-slide">
+                    <div class="azure-service-header-carousel">
+                        <span class="azure-service-icon">🗄️</span>
+                        <h3>Azure Database for PostgreSQL</h3>
+                        <p class="subtitle">Managed Relational Database</p>
+                    </div>
+                    <div class="azure-service-content">
+                        <h4>Purpose in PakPulse</h4>
+                        <p>
+                            Azure Database for PostgreSQL stores all structured data including user accounts, alerts, posts, comments, and location preferences. It provides a fully managed, enterprise-ready PostgreSQL database service.
+                        </p>
+
+                        <h4>Key Features Used</h4>
+                        <div class="service-grid">
+                            <div class="service-box purple">
+                                <h5>Automatic Backups</h5>
+                                <p>Point-in-time restore with 35-day retention</p>
+                            </div>
+                            <div class="service-box purple">
+                                <h5>High Availability</h5>
+                                <p>Zone-redundant deployment for 99.99% uptime</p>
+                            </div>
+                            <div class="service-box purple">
+                                <h5>Scaling</h5>
+                                <p>Vertical and horizontal scaling without downtime</p>
+                            </div>
+                            <div class="service-box purple">
+                                <h5>Security</h5>
+                                <p>Advanced threat protection and data encryption</p>
+                            </div>
+                        </div>
+
+                        <h4>Data Entities</h4>
+                        <ul class="feature-list">
+                            <li>
+                                <span class="bullet purple">•</span>
+                                <span><strong>User Accounts:</strong> Profile information, authentication data, and preferences</span>
+                            </li>
+                            <li>
+                                <span class="bullet purple">•</span>
+                                <span><strong>Alert Records:</strong> Location-based alerts with metadata and categorization</span>
+                            </li>
+                            <li>
+                                <span class="bullet purple">•</span>
+                                <span><strong>Community Posts:</strong> User-generated content with comments and media references</span>
+                            </li>
+                            <li>
+                                <span class="bullet purple">•</span>
+                                <span><strong>Location Data:</strong> Geospatial information and user-defined alert zones</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="service-box">
-                    <h5>Custom Domains & SSL</h5>
-                    <p>Secure HTTPS connections with custom domain support</p>
+
+                <!-- Slide 4: Azure Blob Storage -->
+                <div class="azure-carousel-slide">
+                    <div class="azure-service-header-carousel">
+                        <span class="azure-service-icon">📦</span>
+                        <h3>Azure Blob Storage</h3>
+                        <p class="subtitle">Scalable Object Storage</p>
+                    </div>
+                    <div class="azure-service-content">
+                        <h4>Purpose in PakPulse</h4>
+                        <p>
+                            Azure Blob Storage stores all unstructured data including user-uploaded images, media files, and processed data from the scraping pipeline. It provides highly scalable, durable, and secure object storage.
+                        </p>
+
+                        <h4>Key Features Used</h4>
+                        <div class="service-grid">
+                            <div class="service-box accent">
+                                <h5>Scalability</h5>
+                                <p>Petabyte-scale storage with automatic load distribution</p>
+                            </div>
+                            <div class="service-box accent">
+                                <h5>Durability</h5>
+                                <p>99.999999999% durability with redundant storage</p>
+                            </div>
+                            <div class="service-box accent">
+                                <h5>Access Tiers</h5>
+                                <p>Hot, Cool, and Archive tiers for cost optimization</p>
+                            </div>
+                            <div class="service-box accent">
+                                <h5>Security</h5>
+                                <p>Role-based access control and encryption at rest</p>
+                            </div>
+                        </div>
+
+                        <h4>Storage Use Cases</h4>
+                        <ul class="feature-list">
+                            <li>
+                                <span class="bullet accent">•</span>
+                                <span><strong>User Media:</strong> Profile pictures and community post images</span>
+                            </li>
+                            <li>
+                                <span class="bullet accent">•</span>
+                                <span><strong>Processed Data:</strong> Normalized news articles and weather reports</span>
+                            </li>
+                            <li>
+                                <span class="bullet accent">•</span>
+                                <span><strong>Archive Storage:</strong> Historical data for compliance and analytics</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Slide 5: Azure Functions -->
+                <div class="azure-carousel-slide">
+                    <div class="azure-service-header-carousel">
+                        <span class="azure-service-icon">⚡</span>
+                        <h3>Azure Functions</h3>
+                        <p class="subtitle">Serverless Compute</p>
+                    </div>
+                    <div class="azure-service-content">
+                        <h4>Purpose in PakPulse</h4>
+                        <p>
+                            Azure Functions powers the automated data scraping pipeline that collects news, weather, and traffic updates from external sources. It provides event-driven, serverless compute for running code on-demand without provisioning or managing servers.
+                        </p>
+
+                        <h4>Key Features Used</h4>
+                        <div class="service-grid">
+                            <div class="service-box secondary">
+                                <h5>Event Triggers</h5>
+                                <p>Timer triggers for scheduled scraping jobs</p>
+                            </div>
+                            <div class="service-box secondary">
+                                <h5>Scaling</h5>
+                                <p>Automatic scaling based on workload demands</p>
+                            </div>
+                            <div class="service-box secondary">
+                                <h5>Integration</h5>
+                                <p>Seamless integration with other Azure services</p>
+                            </div>
+                            <div class="service-box secondary">
+                                <h5>Cost-Effective</h5>
+                                <p>Pay only for execution time, automatic scaling</p>
+                            </div>
+                        </div>
+
+                        <h4>Scraping Pipeline Tasks</h4>
+                        <ul class="feature-list">
+                            <li>
+                                <span class="bullet secondary">•</span>
+                                <span><strong>News Scraper:</strong> Extracts breaking news from Pakistani news websites</span>
+                            </li>
+                            <li>
+                                <span class="bullet secondary">•</span>
+                                <span><strong>Weather Fetcher:</strong> Retrieves weather alerts from meteorological APIs</span>
+                            </li>
+                            <li>
+                                <span class="bullet secondary">•</span>
+                                <span><strong>Traffic Monitor:</strong> Collects real-time traffic data from government sources</span>
+                            </li>
+                            <li>
+                                <span class="bullet secondary">•</span>
+                                <span><strong>Data Normalizer:</strong> Processes and standardizes scraped data before storage</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Slide 6: Azure Monitor & Application Insights -->
+                <div class="azure-carousel-slide">
+                    <div class="azure-service-header-carousel">
+                        <span class="azure-service-icon">📊</span>
+                        <h3>Azure Monitor & Application Insights</h3>
+                        <p class="subtitle">Monitoring & Diagnostics</p>
+                    </div>
+                    <div class="azure-service-content">
+                        <h4>Purpose in PakPulse</h4>
+                        <p>
+                            Azure Monitor and Application Insights provide comprehensive monitoring, logging, and diagnostics for the entire application. They help track performance, detect issues, and gain insights into user behavior.
+                        </p>
+
+                        <h4>Key Capabilities</h4>
+                        <div class="service-grid">
+                            <div class="service-box blue">
+                                <h5>Performance Monitoring</h5>
+                                <p>Track response times, throughput, and resource usage</p>
+                            </div>
+                            <div class="service-box blue">
+                                <h5>Error Tracking</h5>
+                                <p>Automatic exception detection and alerting</p>
+                            </div>
+                            <div class="service-box blue">
+                                <h5>Custom Dashboards</h5>
+                                <p>Visualize metrics and KPIs in real-time</p>
+                            </div>
+                            <div class="service-box blue">
+                                <h5>Log Analytics</h5>
+                                <p>Query and analyze application logs</p>
+                            </div>
+                        </div>
+
+                        <h4>Monitoring Coverage</h4>
+                        <ul class="feature-list">
+                            <li>
+                                <span class="bullet blue">•</span>
+                                <span><strong>Infrastructure:</strong> Resource utilization across all Azure services</span>
+                            </li>
+                            <li>
+                                <span class="bullet blue">•</span>
+                                <span><strong>Application Performance:</strong> Request rates, response times, and dependency calls</span>
+                            </li>
+                            <li>
+                                <span class="bullet blue">•</span>
+                                <span><strong>User Experience:</strong> Page load times, user flows, and client-side errors</span>
+                            </li>
+                            <li>
+                                <span class="bullet blue">•</span>
+                                <span><strong>Business Metrics:</strong> Active users, alert delivery rates, and system health</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            <h4>Benefits</h4>
-            <ul class="feature-list">
-                <li>
-                    <span class="bullet">✓</span>
-                    <span>No infrastructure management required - focus on code</span>
-                </li>
-                <li>
-                    <span class="bullet">✓</span>
-                    <span>Built-in monitoring and diagnostics</span>
-                </li>
-                <li>
-                    <span class="bullet">✓</span>
-                    <span>Support for multiple programming languages including Golang</span>
-                </li>
-            </ul>
+            <div class="azure-carousel-controls">
+                <button class="azure-carousel-nav-btn" id="azurePrevBtn">❮</button>
+                <div class="azure-carousel-indicators">
+                    <div class="azure-carousel-indicator active" data-slide="0"></div>
+                    <div class="azure-carousel-indicator" data-slide="1"></div>
+                    <div class="azure-carousel-indicator" data-slide="2"></div>
+                    <div class="azure-carousel-indicator" data-slide="3"></div>
+                    <div class="azure-carousel-indicator" data-slide="4"></div>
+                    <div class="azure-carousel-indicator" data-slide="5"></div>
+                </div>
+                <button class="azure-carousel-nav-btn" id="azureNextBtn">❯</button>
+            </div>
         </div>
     </div>
 
-    <div class="azure-service">
-        <div class="azure-service-header secondary">
-            <h3><span class="icon">📨</span> Azure Service Bus</h3>
-            <p class="subtitle">Message Broker & Integration</p>
+    <div class="card enhanced">
+        <div class="card-header enhanced">
+            <span class="accent-bar primary"></span>
+            <h3>Architectural Integration</h3>
         </div>
-        <div class="azure-service-body">
-            <h4>Purpose in PakPulse</h4>
+        <p class="text-large">
+            All Azure services in PakPulse work together seamlessly to create a robust, scalable, and maintainable cloud-native application. The microservices architecture, combined with Azure's best-in-class services, ensures optimal performance, reliability, and cost-effectiveness.
+        </p>
+        <div class="highlight-box">
             <p>
-                Azure Service Bus acts as the message broker for asynchronous communication between microservices. It ensures reliable message delivery and decouples services for better scalability and fault tolerance.
+                <strong>Integration Benefits:</strong> Each service is carefully chosen to complement others, creating a cohesive ecosystem that supports real-time communication, data persistence, automated processing, and comprehensive monitoring.
             </p>
-
-            <h4>Key Features Used</h4>
-            <div class="service-grid">
-                <div class="service-box secondary">
-                    <h5>Message Queues</h5>
-                    <p>Point-to-point communication for task distribution</p>
-                </div>
-                <div class="service-box secondary">
-                    <h5>Topics & Subscriptions</h5>
-                    <p>Publish-subscribe pattern for broadcasting alerts</p>
-                </div>
-                <div class="service-box secondary">
-                    <h5>Dead-Letter Queues</h5>
-                    <p>Handle failed message processing gracefully</p>
-                </div>
-                <div class="service-box secondary">
-                    <h5>Message Sessions</h5>
-                    <p>Ordered message processing for related events</p>
-                </div>
-            </div>
-
-            <h4>Use Cases in PakPulse</h4>
-            <ul class="feature-list">
-                <li>
-                    <span class="bullet secondary">•</span>
-                    <span>Alert Service publishes new alerts to Service Bus topics</span>
-                </li>
-                <li>
-                    <span class="bullet secondary">•</span>
-                    <span>Notification Service subscribes to receive and deliver alerts to users</span>
-                </li>
-                <li>
-                    <span class="bullet secondary">•</span>
-                    <span>Post Service queues image processing tasks for background execution</span>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="azure-service">
-        <div class="azure-service-header purple">
-            <h3><span class="icon">🗄️</span> Azure Database for PostgreSQL</h3>
-            <p class="subtitle">Managed Relational Database</p>
-        </div>
-        <div class="azure-service-body">
-            <h4>Purpose in PakPulse</h4>
-            <p>
-                Azure Database for PostgreSQL stores all structured data including user accounts, alerts, posts, comments, and location preferences. It provides a fully managed, enterprise-ready PostgreSQL database service.
-            </p>
-
-            <h4>Key Features Used</h4>
-            <div class="service-grid">
-                <div class="service-box purple">
-                    <h5>Automatic Backups</h5>
-                    <p>Point-in-time restore with 35-day retention</p>
-                </div>
-                <div class="service-box purple">
-                    <h5>High Availability</h5>
-                    <p>Zone-redundant deployment for 99.99% uptime</p>
-                </div>
-                <div class="service-box purple">
-                    <h5>Scaling</h5>
-                    <p>Vertical and horizontal scaling without downtime</p>
-                </div>
-                <div class="service-box purple">
-                    <h5>Security</h5>
-                    <p>Encryption at rest and in transit, firewall rules</p>
-                </div>
-            </div>
-
-            <h4>Data Stored</h4>
-            <div class="grid grid-3">
-                <div class="benefit-card purple">
-                    <h4>User Data</h4>
-                    <p>Profiles, auth, preferences</p>
-                </div>
-                <div class="benefit-card purple">
-                    <h4>Alerts & Posts</h4>
-                    <p>Content, metadata, timestamps</p>
-                </div>
-                <div class="benefit-card purple">
-                    <h4>Location Data</h4>
-                    <p>Cities, coordinates, regions</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="azure-service">
-        <div class="azure-service-header accent">
-            <h3><span class="icon">📦</span> Azure Blob Storage</h3>
-            <p class="subtitle">Object Storage for Media Files</p>
-        </div>
-        <div class="azure-service-body">
-            <h4>Purpose in PakPulse</h4>
-            <p>
-                Azure Blob Storage stores all unstructured data such as user-uploaded images, profile pictures, and media attachments for community posts. It provides scalable, secure, and cost-effective object storage.
-            </p>
-
-            <h4>Key Features Used</h4>
-            <div class="service-grid">
-                <div class="service-box accent">
-                    <h5>Hot/Cool/Archive Tiers</h5>
-                    <p>Optimize costs based on access frequency</p>
-                </div>
-                <div class="service-box accent">
-                    <h5>CDN Integration</h5>
-                    <p>Fast content delivery with Azure CDN</p>
-                </div>
-                <div class="service-box accent">
-                    <h5>Access Control</h5>
-                    <p>Fine-grained permissions with SAS tokens</p>
-                </div>
-                <div class="service-box accent">
-                    <h5>Lifecycle Management</h5>
-                    <p>Automatic archival of old content</p>
-                </div>
-            </div>
-
-            <h4>Benefits</h4>
-            <ul class="feature-list">
-                <li>
-                    <span class="bullet">✓</span>
-                    <span>Virtually unlimited storage capacity</span>
-                </li>
-                <li>
-                    <span class="bullet">✓</span>
-                    <span>99.999999999% (11 9's) durability</span>
-                </li>
-                <li>
-                    <span class="bullet">✓</span>
-                    <span>Direct upload from client applications</span>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="azure-service">
-        <div class="azure-service-header green">
-            <h3><span class="icon">⚡</span> Azure Functions</h3>
-            <p class="subtitle">Serverless Compute & Automation</p>
-        </div>
-        <div class="azure-service-body">
-            <h4>Purpose in PakPulse</h4>
-            <p>
-                Azure Functions powers the automated data scraping pipeline that collects news, weather, and traffic updates from external sources. It runs on a serverless architecture, executing code in response to triggers without managing infrastructure.
-            </p>
-
-            <h4>Key Features Used</h4>
-            <div class="service-grid">
-                <div class="service-box green">
-                    <h5>Timer Triggers</h5>
-                    <p>Schedule scraping jobs to run every 15 minutes</p>
-                </div>
-                <div class="service-box green">
-                    <h5>HTTP Triggers</h5>
-                    <p>Webhook endpoints for external API integrations</p>
-                </div>
-                <div class="service-box green">
-                    <h5>Bindings</h5>
-                    <p>Direct integration with Blob Storage and PostgreSQL</p>
-                </div>
-                <div class="service-box green">
-                    <h5>Consumption Plan</h5>
-                    <p>Pay only for execution time, automatic scaling</p>
-                </div>
-            </div>
-
-            <h4>Scraping Pipeline Tasks</h4>
-            <ul class="feature-list">
-                <li>
-                    <span class="bullet secondary">•</span>
-                    <span><strong>News Scraper:</strong> Extracts breaking news from Pakistani news websites</span>
-                </li>
-                <li>
-                    <span class="bullet secondary">•</span>
-                    <span><strong>Weather Fetcher:</strong> Retrieves weather alerts from meteorological APIs</span>
-                </li>
-                <li>
-                    <span class="bullet secondary">•</span>
-                    <span><strong>Traffic Monitor:</strong> Collects real-time traffic data from government sources</span>
-                </li>
-                <li>
-                    <span class="bullet secondary">•</span>
-                    <span><strong>Data Normalizer:</strong> Processes and standardizes scraped data before storage</span>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="azure-service">
-        <div class="azure-service-header blue">
-            <h3><span class="icon">📊</span> Azure Monitor & Application Insights</h3>
-            <p class="subtitle">Monitoring & Diagnostics</p>
-        </div>
-        <div class="azure-service-body">
-            <h4>Purpose in PakPulse</h4>
-            <p>
-                Azure Monitor and Application Insights provide comprehensive monitoring, logging, and diagnostics for the entire application. They help track performance, detect issues, and gain insights into user behavior.
-            </p>
-
-            <h4>Key Capabilities</h4>
-            <div class="service-grid">
-                <div class="service-box blue">
-                    <h5>Performance Monitoring</h5>
-                    <p>Track response times, throughput, and resource usage</p>
-                </div>
-                <div class="service-box blue">
-                    <h5>Error Tracking</h5>
-                    <p>Automatic exception detection and alerting</p>
-                </div>
-                <div class="service-box blue">
-                    <h5>Custom Dashboards</h5>
-                    <p>Visualize metrics and KPIs in real-time</p>
-                </div>
-                <div class="service-box blue">
-                    <h5>Log Analytics</h5>
-                    <p>Query and analyze application logs</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="card" style="background: linear-gradient(135deg, #0ea5e9 0%, #0d9488 100%); color: white;">
-        <div style="margin-bottom: 1.5rem;">
-            <h3 style="font-size: 1.875rem; font-weight: bold; color: white;">Azure Services Summary</h3>
-        </div>
-        <div class="stats-grid">
-            <div class="stat-card">
-                <p class="stat-number">6</p>
-                <p class="stat-label">Core Azure Services</p>
-            </div>
-            <div class="stat-card">
-                <p class="stat-number">99.95%</p>
-                <p class="stat-label">Target Availability</p>
-            </div>
-            <div class="stat-card">
-                <p class="stat-number">500+</p>
-                <p class="stat-label">Concurrent Users</p>
-            </div>
         </div>
     </div>
 </main>
+
+<script>
+    // Azure Services Carousel functionality
+    function initializeAzureCarousel() {
+        let currentSlide = 0;
+        const carousel = document.getElementById('azureServicesCarousel');
+        if (!carousel) return;
+        
+        const slides = carousel.querySelectorAll('.azure-carousel-slide');
+        const indicators = carousel.querySelectorAll('.azure-carousel-indicator');
+        const prevBtn = carousel.querySelector('#azurePrevBtn');
+        const nextBtn = carousel.querySelector('#azureNextBtn');
+        const totalSlides = slides.length;
+
+        if (totalSlides === 0) return;
+
+        function showSlide(index) {
+            // Hide all slides
+            slides.forEach(slide => slide.classList.remove('active'));
+            
+            // Remove active class from all indicators
+            indicators.forEach(indicator => indicator.classList.remove('active'));
+            
+            // Show current slide
+            slides[index].classList.add('active');
+            
+            // Set active indicator
+            indicators[index].classList.add('active');
+            
+            currentSlide = index;
+        }
+
+        // Next button event
+        if (nextBtn) {
+            nextBtn.addEventListener('click', function() {
+                let newIndex = currentSlide + 1;
+                if (newIndex >= totalSlides) newIndex = 0;
+                showSlide(newIndex);
+            });
+        }
+
+        // Previous button event
+        if (prevBtn) {
+            prevBtn.addEventListener('click', function() {
+                let newIndex = currentSlide - 1;
+                if (newIndex < 0) newIndex = totalSlides - 1;
+                showSlide(newIndex);
+            });
+        }
+
+        // Indicator click events
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', function() {
+                showSlide(index);
+            });
+        });
+
+        // Auto-advance carousel every 8 seconds
+        setInterval(() => {
+            let newIndex = currentSlide + 1;
+            if (newIndex >= totalSlides) newIndex = 0;
+            showSlide(newIndex);
+        }, 8000);
+    }
+
+    // Initialize carousel when DOM is loaded
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeAzureCarousel);
+    } else {
+        initializeAzureCarousel();
+    }
+    
+    // Also initialize after Blazor has rendered
+    window.addEventListener('load', initializeAzureCarousel);
+</script>
